@@ -1,0 +1,77 @@
+/* Base Styling */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+	padding: 0;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	font-family: system-ui, sans-serif;
+	background: #fff;
+	color: #111;
+	line-height: 1.5;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Sections */
+
+.section {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	box-sizing: border-box;
+}
+
+/* Section Specific Styling */
+
+.about-section {
+	background-color: #9b6363;
+}
+
+.skills-section {
+	background-color: #799b63;
+}
+
+.projects-section {
+	background-color: #63679b;
+}
+
+.contact-section {
+	background-color: #cb84d5;
+}
