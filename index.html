@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rigelle Cruz</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rigelle Cruz</title>
 
-    <!-- CSS ================================================== -->
-    <link rel="stylesheet" href="css/main.css" />
+		<!-- CSS ================================================== -->
+		<link rel="stylesheet" href="css/main.css" />
 
-    <!-- script ================================================== -->
-    <!-- <script src="js[SCRIPT NAME HERE].js"></script> -->
+		<!-- script ================================================== -->
+		<script src="js/include.js"></script>
 
-    <!-- favicons================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  </head>
-  <body>
-<h1>HELLO!!</h1>
+		<!-- favicons================================================== -->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	</head>
 
-  </body>
+	<body>
+		<!-- Header -->
+		<div data-include="components/header.html"></div>
+		<!-- Header Ends Here -->
+
+		<main>
+			<!-- About Section -->
+			<div data-include="components/about.html"></div>
+			<!-- About Section Ends Here -->
+
+			<!-- Skills Section -->
+			<div data-include="components/skills.html"></div>
+			<!-- Skills Section Ends Here -->
+
+			<!-- Projects Section -->
+			<div data-include="components/projects.html"></div>
+			<!-- Projects Section Ends Here -->
+		</main>
+	</body>
+
+	<footer>
+		<!-- Contact -->
+		<div data-include="components/contact.html"></div>
+		<!-- Contact Ends Here -->
+	</footer>
 </html>
