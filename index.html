@@ -18,27 +18,36 @@
 
 	<body>
 		<!-- Header -->
+		<nav>
+			<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#skills">Skills</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+
 		<div data-include="components/header.html"></div>
 		<!-- Header Ends Here -->
 
 		<main>
 			<!-- About Section -->
-			<div data-include="components/about.html"></div>
+			<div id="about" data-include="components/about.html"></div>
 			<!-- About Section Ends Here -->
 
 			<!-- Skills Section -->
-			<div data-include="components/skills.html"></div>
+			<div id="skills" data-include="components/skills.html"></div>
 			<!-- Skills Section Ends Here -->
 
 			<!-- Projects Section -->
-			<div data-include="components/projects.html"></div>
+			<div id="projects" data-include="components/projects.html"></div>
 			<!-- Projects Section Ends Here -->
 		</main>
 	</body>
 
 	<footer>
 		<!-- Contact -->
-		<div data-include="components/contact.html"></div>
+		<div id="contact" data-include="components/contact.html"></div>
 		<!-- Contact Ends Here -->
 	</footer>
 </html>
