@@ -47,6 +47,26 @@ video {
 	display: block;
 }
 
+/* Header */
+.header {
+	background-image: url('../assets/image-name.jpg');/* CHANGE TO ACTUAL IMAGE PATH!! */
+	background-color: #fad2ff;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	color: #0f0909;
+	text-align: center;
+
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	padding: 0 2rem;
+}
+
 /* Sections */
 
 .section {
