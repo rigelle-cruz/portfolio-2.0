@@ -33,11 +33,12 @@ a {
 	color: inherit;
 }
 
+html,
 body {
-	font-family: system-ui, sans-serif;
-	background: #fff;
-	color: #111;
-	line-height: 1.5;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 
 img,
@@ -181,4 +182,17 @@ header h1 {
 .zoom-on-scroll.zoomed-in {
 	transform: scale(1);
 	opacity: 1;
+}
+
+/* Scroll Snap */
+main {
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	height: 100vh;
+}
+
+main > div[id] {
+	scroll-snap-align: start;
+	min-height: 100vh;
+	scroll-behavior: smooth;
 }
