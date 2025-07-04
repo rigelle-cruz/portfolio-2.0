@@ -1,7 +1,5 @@
-/* Hero */
 .hero {
 	position: relative;
-	background-image: url('../assets/image-name.jpg'); /* CHANGE TO ACTUAL IMAGE PATH!! */
 	background-color: #e3c1d1;
 	background-size: cover;
 	background-position: center;
@@ -17,51 +15,33 @@
 	align-items: center;
 
 	padding: 0 2rem;
+	overflow: hidden;
 }
 
-hero h1 {
-	font-family: 'Noser', sans-serif;
-	font-size: 5rem;
-	letter-spacing: 1rem;
-}
-
-/* Computer */
-
-.computer-wrapper {
-	position: absolute;
-	left: 10%;
-	width: 100%;
-	max-width: 90%;
-}
-
-.computer-img {
-	width: 80%;
-	height: auto;
-	display: block;
+.name-container {
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: -15rem;
+	margin-left: 2.5rem;
 }
 
 .name-overlay {
-	position: absolute;
-	top: 44%;
-	left: 40%;
-	width: 25%;
-	transform: translate(-50%, -50%);
 	font-family: 'Noser', monospace;
 	font-size: 3.5rem;
 	color: #00f7ff;
-	text-align: center;
-	white-space: nowrap;
 	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ffb9;
+	white-space: nowrap;
 }
 
-/* Typing effect */
 .typed-name {
 	display: inline-block;
 	overflow: hidden;
 	animation: typing 2.5s steps(12, end) forwards;
+	white-space: nowrap;
 }
 
-/* Blinking cursor */
 .cursor {
 	display: inline-block;
 	font-family: 'Noser', monospace;
@@ -71,6 +51,48 @@ hero h1 {
 	line-height: 1;
 	position: relative;
 	top: -20px;
+}
+
+.resume-btn {
+	padding: 14px 28px;
+	background-color: transparent;
+	color: #00f7ff;
+	border: 2px solid #00f7ff;
+	border-radius: 10px;
+	font-family: 'Noser', monospace;
+	font-size: 1.2rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-decoration: none;
+	text-shadow: 0 0 8px #00f7ff, 0 0 10px #00f7ff2f;
+	box-shadow: 0 0 10px #00f7ff33;
+	transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+	background-color: #00f7ff;
+	color: #0f0909;
+	text-shadow: none;
+	box-shadow: 0 0 20px #00f7ff99;
+}
+
+/* Computer image styling */
+.computer-wrapper {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	max-width: 90%;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.computer-img {
+	width: 90%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
 }
 
 /* Keyframes */
