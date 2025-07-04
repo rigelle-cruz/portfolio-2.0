@@ -21,7 +21,6 @@
 	</head>
 
 	<body>
-		<!-- Header -->
 		<nav class="nav">
 			<a href="#about">About</a>
 			<a href="#skills">Skills</a>
@@ -29,10 +28,9 @@
 			<a href="#contact">Contact</a>
 		</nav>
 
-		<div data-include="components/header.html"></div>
-		<!-- Header Ends Here -->
-
 		<main>
+			<div id="hero" data-include="components/header.html"></div>
+
 			<!-- About Section -->
 			<div id="about" data-include="components/about.html"></div>
 			<!-- About Section Ends Here -->
@@ -44,12 +42,10 @@
 			<!-- Projects Section -->
 			<div id="projects" data-include="components/projects.html"></div>
 			<!-- Projects Section Ends Here -->
+
+			<!-- Contact -->
+			<div id="contact" data-include="components/contact.html"></div>
+			<!-- Contact Ends Here -->
 		</main>
 	</body>
-
-	<footer>
-		<!-- Contact -->
-		<div id="contact" data-include="components/contact.html"></div>
-		<!-- Contact Ends Here -->
-	</footer>
 </html>
