@@ -20,6 +20,10 @@
 
 .nav.scrolled {
 	padding: 10px 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
 }
 
 .nav a {
@@ -41,6 +45,11 @@
 }
 
 .nav.scrolled a {
+	color: #000;
+	text-align: right;
+	width: 100%;
+}
+
+.nav.nav-dark a {
 	color: #fff;
-	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ffb9;
 }

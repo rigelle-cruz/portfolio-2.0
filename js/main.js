@@ -4,15 +4,21 @@ document.addEventListener('includesLoaded', () => {
 	const observer = new IntersectionObserver(
 		(entries) => {
 			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
+				if (
+					entry.isIntersecting &&
+					!entry.target.classList.contains('zoomed-in')
+				) {
 					entry.target.classList.add('zoomed-in');
-				} else {
+				} else if (
+					!entry.isIntersecting &&
+					entry.target.classList.contains('zoomed-in')
+				) {
 					entry.target.classList.remove('zoomed-in');
 				}
 			});
 		},
 		{
-			threshold: 0.5,
+			threshold: 0.01,
 		}
 	);
 
