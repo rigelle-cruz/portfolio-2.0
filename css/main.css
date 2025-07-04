@@ -41,13 +41,6 @@ body {
 	overflow: hidden;
 }
 
-img,
-video {
-	max-width: 100%;
-	height: auto;
-	display: block;
-}
-
 /* Sections */
 
 .section {
@@ -92,6 +85,7 @@ video {
 }
 
 /* Scroll Snap */
+
 main {
 	scroll-snap-type: y mandatory;
 	overflow-y: scroll;
