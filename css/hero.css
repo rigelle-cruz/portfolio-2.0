@@ -1,0 +1,94 @@
+/* Hero */
+.hero {
+	position: relative;
+	background-image: url('../assets/image-name.jpg'); /* CHANGE TO ACTUAL IMAGE PATH!! */
+	background-color: #e3c1d1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	color: #0f0909;
+	text-align: center;
+
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	padding: 0 2rem;
+}
+
+hero h1 {
+	font-family: 'Noser', sans-serif;
+	font-size: 5rem;
+	letter-spacing: 1rem;
+}
+
+/* Computer */
+
+.computer-wrapper {
+	position: absolute;
+	left: 10%;
+	width: 100%;
+	max-width: 90%;
+}
+
+.computer-img {
+	width: 80%;
+	height: auto;
+	display: block;
+}
+
+.name-overlay {
+	position: absolute;
+	top: 44%;
+	left: 40%;
+	width: 25%;
+	transform: translate(-50%, -50%);
+	font-family: 'Noser', monospace;
+	font-size: 3.5rem;
+	color: #00f7ff;
+	text-align: center;
+	white-space: nowrap;
+	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ffb9;
+}
+
+/* Typing effect */
+.typed-name {
+	display: inline-block;
+	overflow: hidden;
+	animation: typing 2.5s steps(12, end) forwards;
+}
+
+/* Blinking cursor */
+.cursor {
+	display: inline-block;
+	font-family: 'Noser', monospace;
+	animation: blink 0.7s steps(1) infinite;
+	color: #00f7ff;
+	margin-left: 2px;
+	line-height: 1;
+	position: relative;
+	top: -20px;
+}
+
+/* Keyframes */
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
