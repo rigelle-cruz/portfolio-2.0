@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function updateNavDark() {
 		let navDark = false;
-		const isSmallScreen = window.innerWidth <= 470;
+		const isSmallScreen = window.innerWidth <= 537;
 
 		sections.forEach((section) => {
 			const rect = section.getBoundingClientRect();

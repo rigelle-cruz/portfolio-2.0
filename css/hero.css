@@ -79,14 +79,12 @@
 
 /* Resume Button */
 .resume-btn {
-	padding: clamp(8px, 2vw, 16px) clamp(18px, 5vw, 36px);
+	padding: 0.5rem 2rem 0.5rem 2rem;
 	background-color: transparent;
 	color: #00f7ff;
-	border: 2px solid #00f7ff;
-	border-radius: 10px;
-	font-family: 'Noser', monospace;
-	font-size: clamp(1rem, 2.5vw, 1.3rem);
-	font-weight: bold;
+	border: 0.5rem solid #00f7ff;
+	font-family: 'ByteBounce', monospace;
+	font-size: 2rem;
 	letter-spacing: 1px;
 	text-decoration: none;
 	text-shadow: 0 0 8px #00f7ff, 0 0 10px #00f7ff2f;
@@ -141,13 +139,28 @@
 		width: 100%;
 		max-width: 100%;
 		text-align: center;
-		font-size: 1rem;
-		padding: 12px;
+		font-size: 1.5rem;
+		padding: 0.2rem 0rem 0.2rem 0rem;
 	}
 }
 
 /* Mobile */
-@media (max-width: 600px) {
+
+@media (max-width: 750px) {
+	.cursor {
+		top: -7px;
+		margin-left: -5px;
+	}
+
+	.resume-btn {
+		width: 100%;
+		text-align: center;
+		font-size: 1.5rem;
+		padding: 0.5rem 0rem 0.5rem 0rem;
+	}
+}
+
+@media (max-width: 675px) {
 	.computer-img {
 		width: 600px;
 	}
@@ -160,12 +173,13 @@
 	.resume-btn {
 		width: 100%;
 		text-align: center;
-		font-size: 0.7rem;
+		font-size: 1rem;
 		padding: 5px;
 	}
 }
+
 /* Small Screens */
-@media (max-width: 470px) {
+@media (max-width: 537px) {
 	.hero {
 		background-color: #000000;
 	}
@@ -200,7 +214,7 @@
 
 	.resume-btn {
 		padding: 15px 0 15px 0;
-		font-size: 1.1rem;
+		font-size: 1.7rem;
 	}
 }
 
