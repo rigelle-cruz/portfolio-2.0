@@ -32,6 +32,10 @@
 	text-align: center;
 }
 
+.about-text h2 {
+	text-align: center;
+}
+
 .about-computer-wrapper {
 	position: absolute;
 	top: 20%;
@@ -61,4 +65,65 @@
 .screen-btn:hover {
 	background-color: #00f7ffbc;
 	color: #0f0909;
+}
+
+@media (max-width: 1650px) {
+	.about-text {
+		top: 47%;
+		width: 30%;
+	}
+}
+
+@media (max-width: 1400px) {
+	.about-text {
+		padding: 15px;
+		top: 47%;
+		width: 40%;
+	}
+}
+
+@media (max-width: 1050px) {
+	.about-text {
+		padding: 15px;
+		top: 47%;
+		width: 45%;
+		font-size: 1.2rem;
+	}
+}
+
+@media (max-width: 850px) {
+	.about-text {
+		padding: 15px;
+		width: 50%;
+	}
+}
+
+@media (max-width: 800px) {
+	.about-text {
+		padding: 15px;
+		width: 70%;
+	}
+}
+
+@media (max-width: 600px) {
+	.about-text {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 537px) {
+	.about-text {
+		padding: 15px;
+		width: 50%;
+	}
+	.about-container {
+		background-color: #000;
+	}
+	.about-section {
+		background-color: #000;
+	}
+
+	.about-computer-img {
+		opacity: 0;
+	}
 }
