@@ -1,41 +1,64 @@
+.about-container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .about-text {
 	position: absolute;
-	width: 30%;
-	left: 46%;
-	bottom: 35%;
-	transform: translateX(-50%);
-	margin: 0;
+	padding: 15px;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 25%;
 	z-index: 2;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-family: 'Noser', monospace;
-	font-size: clamp(1.5rem, 5vw, 1rem);
+	justify-content: center;
+	font-family: 'ByteBounce', monospace;
+	font-size: 1.3rem;
 	color: #00f7ff;
 	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ffb9;
 	line-height: 1.2;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	text-align: left;
+}
+
+.about-text p {
+	text-align: center;
 }
 
 .about-computer-wrapper {
-	margin-top: 100px;
-	bottom: 0;
-	left: 30%;
-
-	width: 100%;
-	max-width: 90%;
+	position: absolute;
+	top: 20%;
 	pointer-events: none;
 	z-index: 1;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .about-computer-img {
-	width: clamp(60%, 90vw, 90%);
-	max-width: 100%;
+	width: 950px;
 	height: auto;
-	display: block;
-	margin: 0 auto;
+}
+
+.screen-btn {
+	margin-top: 10px;
+	padding: 5px 10px 5px 10px;
+	background-color: #00f7ff;
+	color: #000;
+	font-family: 'ByteBounce', monospace;
+	text-decoration: none;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+.screen-btn:hover {
+	background-color: #00f7ffbc;
+	color: #0f0909;
 }

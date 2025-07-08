@@ -54,7 +54,7 @@ html {
 	justify-content: center;
 	padding: 2rem;
 	box-sizing: border-box;
-	overflow: visible; 
+	overflow: visible;
 	position: relative;
 }
 
@@ -66,7 +66,6 @@ html {
 
 .about-section {
 	background-color: #e3c1d1;
-	position: absolute;
 }
 
 .skills-section {
@@ -109,4 +108,29 @@ main > div[id] {
 	scroll-behavior: smooth;
 	overflow: hidden;
 	position: relative;
+}
+
+.pixel-corners {
+	clip-path: polygon(
+		0px calc(100% - 10px),
+		5px calc(100% - 10px),
+		5px calc(100% - 5px),
+		10px calc(100% - 5px),
+		10px 100%,
+		calc(100% - 10px) 100%,
+		calc(100% - 10px) calc(100% - 5px),
+		calc(100% - 5px) calc(100% - 5px),
+		calc(100% - 5px) calc(100% - 10px),
+		100% calc(100% - 10px),
+		100% 10px,
+		calc(100% - 5px) 10px,
+		calc(100% - 5px) 5px,
+		calc(100% - 10px) 5px,
+		calc(100% - 10px) 0px,
+		10px 0px,
+		10px 5px,
+		5px 5px,
+		5px 10px,
+		0px 10px
+	);
 }
