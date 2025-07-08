@@ -3,14 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	const main = document.querySelector('main');
 	const sections = document.querySelectorAll('main > div[id]');
 
-	main.addEventListener('scroll', () => {
+	function updateNavDark() {
 		let navDark = false;
+		const isSmallScreen = window.innerWidth <= 470;
+
 		sections.forEach((section) => {
 			const rect = section.getBoundingClientRect();
 			const mainRect = main.getBoundingClientRect();
 
 			if (rect.top < mainRect.bottom && rect.bottom > mainRect.top) {
-				if (section.classList.contains('dark-section')) {
+				if (
+					section.classList.contains('dark-section') ||
+					(isSmallScreen && section.hasAttribute('data-nav-dark'))
+				) {
 					navDark = true;
 				}
 			}
@@ -20,7 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		} else {
 			nav.classList.remove('nav-dark');
 		}
-	});
+	}
+
+	main.addEventListener('scroll', updateNavDark);
+	window.addEventListener('resize', updateNavDark);
+	updateNavDark();
 
 	// Hamburger menu toggle
 	const navToggle = document.querySelector('.nav-toggle');

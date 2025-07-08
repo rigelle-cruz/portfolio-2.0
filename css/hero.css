@@ -159,13 +159,21 @@
 		width: 100%;
 		text-align: center;
 		font-size: 0.7rem;
+		padding: 5px;
 	}
 }
-
 /* Small Screens */
-@media (max-width: 400px) {
+@media (max-width: 470px) {
+	.hero {
+		background-color: #000000;
+	}
+
 	.computer-img {
-		display: none;
+		opacity: 0;
+	}
+
+	.name-container {
+		transform: translate(-50%, -50%);
 	}
 }
 
