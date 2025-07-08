@@ -1,4 +1,11 @@
 .about-container {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.about-container {
 	position: relative;
 	width: 100%;
 	height: 100vh;
@@ -38,7 +45,7 @@
 
 .about-computer-wrapper {
 	position: absolute;
-	top: 20%;
+	top: 21%;
 	pointer-events: none;
 	z-index: 1;
 	display: flex;
