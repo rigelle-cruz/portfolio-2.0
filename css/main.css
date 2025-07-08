@@ -41,6 +41,10 @@ body {
 	overflow: hidden;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 /* Sections */
 
 .section {
@@ -50,7 +54,7 @@ body {
 	justify-content: center;
 	padding: 2rem;
 	box-sizing: border-box;
-	overflow: visible; /* Allow children to overflow */
+	overflow: visible; 
 	position: relative;
 }
 
