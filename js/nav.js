@@ -4,18 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	const sections = document.querySelectorAll('main > div[id]');
 
 	main.addEventListener('scroll', () => {
-		if (main.scrollTop > 50) {
-			nav.classList.add('scrolled');
-		} else {
-			nav.classList.remove('scrolled');
-		}
-
-		// Detect which section is in view
 		let navDark = false;
 		sections.forEach((section) => {
 			const rect = section.getBoundingClientRect();
 			const mainRect = main.getBoundingClientRect();
-			// Check if section is mostly in view
+
 			if (rect.top < mainRect.bottom && rect.bottom > mainRect.top) {
 				if (section.classList.contains('dark-section')) {
 					navDark = true;
@@ -28,4 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
 			nav.classList.remove('nav-dark');
 		}
 	});
+
+	// Hamburger menu toggle
+	const navToggle = document.querySelector('.nav-toggle');
+	const navLinks = nav.querySelectorAll('a');
+
+	if (navToggle) {
+		navToggle.addEventListener('click', () => {
+			const isOpen = nav.classList.toggle('open');
+			navToggle.setAttribute('aria-expanded', isOpen);
+		});
+
+		navLinks.forEach((link) => {
+			link.addEventListener('click', () => {
+				if (window.innerWidth <= 900) {
+					nav.classList.remove('open');
+					navToggle.setAttribute('aria-expanded', false);
+				}
+			});
+		});
+	}
 });
