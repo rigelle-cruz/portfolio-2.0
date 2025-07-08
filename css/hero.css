@@ -66,7 +66,7 @@
 	font-size: clamp(1.5rem, 5vw, 3.5rem);
 }
 
-/* Blinking Cursor (remove from HTML if not needed) */
+/* Blinking Cursor */
 .cursor {
 	display: inline-block;
 	font-family: 'Noser', monospace;
@@ -79,19 +79,22 @@
 
 /* Resume Button */
 .resume-btn {
-	padding: clamp(8px, 2vw, 14px) clamp(16px, 4vw, 28px);
+	padding: clamp(8px, 2vw, 16px) clamp(18px, 5vw, 36px);
 	background-color: transparent;
 	color: #00f7ff;
 	border: 2px solid #00f7ff;
 	border-radius: 10px;
 	font-family: 'Noser', monospace;
-	font-size: clamp(0.9rem, 2vw, 1.2rem);
+	font-size: clamp(1rem, 2.5vw, 1.3rem);
 	font-weight: bold;
 	letter-spacing: 1px;
 	text-decoration: none;
 	text-shadow: 0 0 8px #00f7ff, 0 0 10px #00f7ff2f;
 	box-shadow: 0 0 10px #00f7ff33;
 	transition: all 0.3s ease;
+	display: inline-block;
+	max-width: 90vw;
+	white-space: nowrap;
 }
 
 .resume-btn:hover {
@@ -117,28 +120,50 @@
 }
 
 .computer-img {
-	width: 1000px; /* Large fixed size for desktop */
+	width: 1000px;
 	max-width: 100%;
 	height: auto;
 	display: block;
 	margin: 0 auto;
 }
 
-/* Tablet: lock image size */
+/* Tablet*/
 @media (max-width: 900px) {
 	.computer-img {
 		width: 700px;
 	}
-}
 
-/* Mobile: lock image size */
-@media (max-width: 600px) {
-	.computer-img {
-		width: 500px;
+	.cursor {
+		top: -10px;
+	}
+
+	.resume-btn {
+		width: 100%;
+		max-width: 100%;
+		text-align: center;
+		font-size: 1rem;
+		padding: 12px;
 	}
 }
 
-/* Optionally, hide the image on very small screens */
+/* Mobile */
+@media (max-width: 600px) {
+	.computer-img {
+		width: 600px;
+	}
+
+	.cursor {
+		top: -7px;
+	}
+
+	.resume-btn {
+		width: 100%;
+		text-align: center;
+		font-size: 0.7rem;
+	}
+}
+
+/* Small Screens */
 @media (max-width: 400px) {
 	.computer-img {
 		display: none;
