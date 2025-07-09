@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const nav = document.querySelector('.nav');
 	const main = document.querySelector('main');
 	const sections = document.querySelectorAll('main > div[id]');
+	const navLinks = nav.querySelectorAll('a');
 
 	function updateNavDark() {
 		let navDark = false;
@@ -27,13 +28,40 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	main.addEventListener('scroll', updateNavDark);
-	window.addEventListener('resize', updateNavDark);
+	// Highlight active nav link when scrolling
+	function updateActiveNavLink() {
+		let found = false;
+		sections.forEach((section) => {
+			const rect = section.getBoundingClientRect();
+			const mainRect = main.getBoundingClientRect();
+			if (!found && rect.top < mainRect.bottom && rect.bottom > mainRect.top) {
+				navLinks.forEach((link) => {
+					link.classList.toggle(
+						'nav-active-link',
+						link.getAttribute('href') === `#${section.id}`
+					);
+				});
+				found = true;
+			}
+		});
+		if (!found) {
+			navLinks.forEach((link) => link.classList.remove('nav-active-link'));
+		}
+	}
+
+	main.addEventListener('scroll', () => {
+		updateNavDark();
+		updateActiveNavLink();
+	});
+	window.addEventListener('resize', () => {
+		updateNavDark();
+		updateActiveNavLink();
+	});
 	updateNavDark();
+	updateActiveNavLink();
 
 	// Hamburger menu toggle
 	const navToggle = document.querySelector('.nav-toggle');
-	const navLinks = nav.querySelectorAll('a');
 
 	if (navToggle) {
 		navToggle.addEventListener('click', () => {

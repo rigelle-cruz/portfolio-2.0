@@ -142,3 +142,10 @@
 .nav.nav-dark.open .hamburger {
 	background: transparent;
 }
+
+/* Nav active link */
+
+.nav a.nav-active-link {
+	color: #e3c1d1 !important;
+	background-color: #323232;
+}
