@@ -61,20 +61,32 @@
 .typed-name {
 	display: inline-block;
 	overflow: hidden;
-	animation: typing 2.5s steps(12, end) forwards;
+	padding-right: 10px;
+	border-right: 0.15em solid #00f7ff;
+	animation: typing 2.5s steps(12, end) forwards,
+		cursor-blink 0.75s step-end infinite;
 	white-space: nowrap;
 	font-size: clamp(1.5rem, 5vw, 3.5rem);
 }
 
-/* Blinking Cursor */
-.cursor {
-	display: inline-block;
-	font-family: 'Noser', monospace;
-	animation: blink 0.7s steps(1) infinite;
-	color: #00f7ff;
-	position: relative;
-	top: -18px;
-	margin-left: -10px;
+/* Typing Keyframes */
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes cursor-blink {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #00f7ff;
+	}
 }
 
 /* Resume Button */
@@ -147,11 +159,6 @@
 /* Mobile */
 
 @media (max-width: 750px) {
-	.cursor {
-		top: -7px;
-		margin-left: -5px;
-	}
-
 	.resume-btn {
 		width: 100%;
 		text-align: center;
@@ -163,11 +170,6 @@
 @media (max-width: 675px) {
 	.computer-img {
 		width: 600px;
-	}
-
-	.cursor {
-		top: -7px;
-		margin-left: -5px;
 	}
 
 	.resume-btn {
@@ -192,24 +194,8 @@
 		transform: translate(-50%, -50%);
 	}
 
-	.name-overlay {
-		font-family: 'Noser', monospace;
-		font-size: 3rem;
-		color: #00f7ff;
-		text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ffb9;
-		white-space: nowrap;
-	}
-
 	.typed-name {
-		display: inline-block;
-		overflow: hidden;
-		animation: typing 2.5s steps(12, end) forwards;
-		white-space: nowrap;
 		font-size: 3rem;
-	}
-
-	.cursor {
-		top: -15px;
 	}
 
 	.resume-btn {
@@ -222,25 +208,5 @@
 @media (max-width: 400px) {
 	.cursor {
 		margin-left: -15px;
-	}
-}
-
-/* Keyframes */
-@keyframes typing {
-	from {
-		width: 0;
-	}
-	to {
-		width: 100%;
-	}
-}
-
-@keyframes blink {
-	0%,
-	100% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0;
 	}
 }
