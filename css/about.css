@@ -27,47 +27,42 @@
 /* ========== Slide Navigation ========== */
 .slide-nav {
 	position: absolute;
-	top: 15px;
-	right: 5px;
-	left: auto;
+	top: 45px;
+	left: 0;
+	right: auto;
 	z-index: 10;
 	display: flex;
 	gap: 10px;
-	padding: 6px 12px;
 	width: auto;
+	align-items: flex-start;
+	justify-content: flex-start;
 }
 
 /* ========== Buttons ========== */
 
 .nav-btn {
+	width: 10px;
+	height: 10px;
 	margin: 0;
-	padding: 6px 15px;
-	background-color: #e3c1d1;
-	color: #000;
-	font-family: 'ByteBounce', monospace;
-	text-decoration: none;
-	white-space: nowrap;
-	border: none;
-	font-size: 1rem;
-	transition: background 0.2s, color 0.2s;
+	background: none;
+	border: 2px solid #00f7ffbc;
+	border-radius: 0;
+	transition: border-color 0.2s, color 0.2s;
 	cursor: pointer;
 }
 
-.nav-btn.active {
-	background-color: #e3c1d1;
-	color: #fff;
-}
-
+.nav-btn.active,
 .nav-btn:focus {
-	background-color: #e3c1d1;
+	border-color: #00f7ff;
 	color: #fff;
-	outline: 2px solid #00f7ff;
-	outline-offset: 2px;
+	outline: none;
+	background: none;
 }
 
 .nav-btn:hover {
-	background-color: #e3c1d1cc;
+	border-color: #00f7ff;
 	color: #0f0909;
+	background: none;
 }
 
 .screen-btn {
@@ -105,14 +100,20 @@
 	align-items: left;
 	justify-content: left;
 	font-family: 'ByteBounce', monospace;
-	font-size: 1.3rem;
+	font-size: 1.15rem;
 	color: #00f7ff;
-	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ffb9;
+	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ff77;
 	line-height: 1.2;
 }
 
 .about-text p {
 	text-align: left;
+	color: azure;
+}
+
+.about-text li {
+	text-align: left;
+	color: azure;
 }
 
 .about-text h1 {
@@ -126,7 +127,7 @@
 	position: absolute;
 	width: 100%;
 	left: 0;
-	top: 60px; /* below nav */
+	top: 60px;
 }
 
 .about-text.slide.active {
@@ -134,6 +135,10 @@
 	opacity: 1;
 	position: absolute;
 	z-index: 2;
+}
+
+.skills-text {
+	color: #00f7ff;
 }
 
 /* ========== Computer Image ========== */
@@ -157,29 +162,41 @@
 	.about-skills-container {
 		width: 30%;
 	}
+}
 
-	.about-text {
-		margin-top: 10px;
-	}
-
-	.slide-nav {
-		top: 30px;
-		right: 5px;
+@media (max-width: 1470px) {
+	.about-skills-container {
+		width: 34%;
 	}
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1350px) {
+	.about-skills-container {
+		width: 37%;
+	}
+}
+
+@media (max-width: 1300px) {
+	.about-skills-container {
+		width: 38%;
+	}
+}
+
+@media (max-width: 1200px) {
 	.about-skills-container {
 		width: 40%;
 	}
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
 	.about-skills-container {
 		width: 47%;
 	}
+}
+
+@media (max-width: 1000px) {
 	.about-text {
-		font-size: 1.2rem;
+		font-size: 1.05rem;
 	}
 }
 

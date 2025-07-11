@@ -82,7 +82,7 @@ document.addEventListener('includesLoaded', () => {
 			if (autoSlide) {
 				showSlide(current === 0 ? 1 : 0);
 			}
-		}, 3000);
+		}, 5000);
 	}
 
 	toAboutBtn.addEventListener('click', () => {
