@@ -11,6 +11,8 @@
 	color: #00f7ff;
 	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ff50;
 	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .contact-list {
@@ -22,7 +24,7 @@
 
 .contact-list li {
 	margin-bottom: 1.2rem;
-	font-size: 2rem;
+	font-size: 2.3rem;
 	display: flex;
 	flex-direction: column;
 }
@@ -56,4 +58,41 @@
 .contact-icons a:hover img {
 	transform: scale(1.1);
 	filter: drop-shadow(0 0 8px #00f7ff) drop-shadow(0 0 20px #00f7ff50);
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+	.contact-container h1 {
+		font-size: 7vh;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.contact-list li {
+		font-size: 2.1rem;
+	}
+	.contact-icons {
+		gap: 1.2rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.contact-container {
+		padding: 1rem;
+	}
+	.contact-container h1 {
+		font-size: 4vh;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.contact-list li {
+		font-size: 1.3rem;
+	}
+	.contact-icons {
+		gap: 0.7rem;
+	}
+	.contact-icons {
+		flex-wrap: wrap;
+	}
 }
