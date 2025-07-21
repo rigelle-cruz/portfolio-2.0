@@ -104,6 +104,34 @@ main {
 	height: 100vh;
 }
 
+/* Custom Scrollbar */
+main {
+	scrollbar-width: thin;
+	scrollbar-color: #e3c1d1 #000;
+}
+
+main::-webkit-scrollbar {
+	width: 8px;
+	background: transparent;
+	transition: background 0.3s;
+}
+main::-webkit-scrollbar-thumb {
+	background: rgba(227, 193, 209, 0.7);
+	border-radius: 8px;
+	transition: background 0.3s;
+	opacity: 0;
+}
+main:hover::-webkit-scrollbar-thumb,
+main:active::-webkit-scrollbar-thumb,
+main:focus::-webkit-scrollbar-thumb,
+main::-webkit-scrollbar-thumb:active {
+	background: #e3c1d1;
+	opacity: 1;
+}
+main::-webkit-scrollbar-track {
+	background: transparent;
+}
+
 main > div[id] {
 	scroll-snap-align: start;
 	min-height: 100vh;
