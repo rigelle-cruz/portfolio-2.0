@@ -15,7 +15,7 @@ document.addEventListener('includesLoaded', () => {
 	// === SECTION HASH UPDATE ON SCROLL ===
 	const sections = document.querySelectorAll('main > div[id]');
 	let lastHash = '';
-	// Observer for updating the URL hash as sections enter the viewport
+	
 	const sectionObserver = new IntersectionObserver(
 		(entries) => {
 			entries.forEach((entry) => {
@@ -25,6 +25,7 @@ document.addEventListener('includesLoaded', () => {
 						history.replaceState(null, '', `#${id}`);
 						lastHash = id;
 					}
+					updateComputerOverlay();
 				}
 			});
 		},
@@ -43,7 +44,7 @@ document.addEventListener('includesLoaded', () => {
 	let current = 0;
 	let intervalId;
 
-	// Show the correct slide (about/skills)
+	
 	function showSlide(idx) {
 		aboutSummary.classList.toggle('active', idx === 0);
 		skillsSummary.classList.toggle('active', idx === 1);
@@ -52,7 +53,7 @@ document.addEventListener('includesLoaded', () => {
 		current = idx;
 	}
 
-	// Start the automatic slide switching
+
 	function startAutoSlide() {
 		clearInterval(intervalId);
 		intervalId = setInterval(() => {
@@ -80,4 +81,59 @@ document.addEventListener('includesLoaded', () => {
 	// Initialize first slide and start auto-slide
 	showSlide(0);
 	startAutoSlide();
+
+	// === COMPUTER OVERLAY LOGIC ===
+	const overlayImg = document.querySelector('.computer-overlay');
+	const aboutSection = document.getElementById('about');
+	const projectsSection = document.getElementById('projects');
+	const contactSection = document.getElementById('contact');
+
+	// Track intersection ratios for all sections
+	const sectionRatios = {
+		about: 0,
+		projects: 0,
+		contact: 0,
+	};
+
+	let overlayHasBeenShown = false;
+
+	const overlaySectionObserver = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (sectionRatios.hasOwnProperty(entry.target.id)) {
+					sectionRatios[entry.target.id] = entry.intersectionRatio;
+				}
+			});
+
+			const showOverlay =
+				sectionRatios.about > 0 ||
+				sectionRatios.projects > 0 ||
+				sectionRatios.contact > 0;
+
+			if (overlayImg) {
+				if (showOverlay) {
+					overlayImg.classList.add('computer-overlay-on');
+				} else {
+					overlayImg.classList.remove('computer-overlay-on');
+				}
+			}
+
+			
+			const aboutContainer = document.querySelector('.about-container');
+			if (aboutContainer) {
+				if (sectionRatios.about === 1) {
+					aboutContainer.classList.add('zoomed-in');
+				} else {
+					aboutContainer.classList.remove('zoomed-in');
+				}
+			}
+		},
+		{
+			threshold: [0, 1.0],
+		}
+	);
+
+	if (aboutSection) overlaySectionObserver.observe(aboutSection);
+	if (projectsSection) overlaySectionObserver.observe(projectsSection);
+	if (contactSection) overlaySectionObserver.observe(contactSection);
 });

@@ -64,10 +64,11 @@ html {
 
 .hero {
 	background-color: #e3c1d1;
+	z-index: 2000;
 }
 
 .about-section {
-	background-color: #e3c1d1;
+	background-color: #000000;
 }
 
 .skills-section {
@@ -163,4 +164,20 @@ main > div[id] {
 		5px 10px,
 		0px 10px
 	);
+}
+
+.computer-overlay {
+	position: fixed;
+	border-top: #000000 solid 100px;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 1500px;
+	height: auto;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.computer-overlay.computer-overlay-on {
+	opacity: 1;
 }

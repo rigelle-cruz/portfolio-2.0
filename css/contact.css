@@ -1,8 +1,13 @@
 .contact-container {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	margin: 0 auto;
-	padding: 2rem;
-	border-radius: 12px;
-	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+	position: absolute;
+	top: 43%;
+	left: 51%;
+	transform: translate(-50%, -50%);
 }
 
 .contact-container h1 {
@@ -61,7 +66,7 @@
 }
 
 /* Responsive styles */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
 	.contact-container h1 {
 		font-size: 7vh;
 		white-space: nowrap;
