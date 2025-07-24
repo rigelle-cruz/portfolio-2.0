@@ -15,7 +15,7 @@ document.addEventListener('includesLoaded', () => {
 	// === SECTION HASH UPDATE ON SCROLL ===
 	const sections = document.querySelectorAll('main > div[id]');
 	let lastHash = '';
-	
+
 	const sectionObserver = new IntersectionObserver(
 		(entries) => {
 			entries.forEach((entry) => {
@@ -25,7 +25,6 @@ document.addEventListener('includesLoaded', () => {
 						history.replaceState(null, '', `#${id}`);
 						lastHash = id;
 					}
-					updateComputerOverlay();
 				}
 			});
 		},
@@ -44,7 +43,6 @@ document.addEventListener('includesLoaded', () => {
 	let current = 0;
 	let intervalId;
 
-	
 	function showSlide(idx) {
 		aboutSummary.classList.toggle('active', idx === 0);
 		skillsSummary.classList.toggle('active', idx === 1);
@@ -52,7 +50,6 @@ document.addEventListener('includesLoaded', () => {
 		toSkillsBtn.classList.toggle('active', idx === 1);
 		current = idx;
 	}
-
 
 	function startAutoSlide() {
 		clearInterval(intervalId);
@@ -118,7 +115,6 @@ document.addEventListener('includesLoaded', () => {
 				}
 			}
 
-			
 			const aboutContainer = document.querySelector('.about-container');
 			if (aboutContainer) {
 				if (sectionRatios.about === 1) {
