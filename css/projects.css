@@ -15,13 +15,11 @@
 }
 
 .project-content {
-	width: 50%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	padding: 32px;
 	box-sizing: border-box;
 }
 
@@ -64,7 +62,7 @@
 /* browser  */
 
 .browser {
-	width: 40%;
+	width: 50%;
 	height: 80%;
 	border-style: solid;
 	border-width: 5px 5px 5px 5px;
@@ -86,4 +84,72 @@
 
 .dot:nth-child(1) {
 	margin-left: 10px;
+}
+* {
+	box-sizing: border-box;
+}
+
+.slideshow-container {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	padding: 20px;
+}
+
+.mySlides {
+	display: flex;
+	flex-direction: row;
+}
+
+.mySlides {
+	display: none;
+}
+
+/* Fading animation */
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+#slide1 {
+	display: block;
+}
+
+#slide2,
+#slide3 {
+	display: none;
+}
+
+.navigation-buttons {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.navigation-buttons .prev,
+.navigation-buttons .next {
+	cursor: pointer;
+	padding: 10px 20px;
+	font-size: 18px;
+	background-color: #f1f1f1;
+	border: none;
+	border-radius: 5px;
+	margin: 0 10px 0 0;
+}
+
+.navigation-buttons .prev:hover,
+.navigation-buttons .next:hover {
+	background-color: #ddd;
 }
