@@ -26,7 +26,7 @@
 
 .project-content h1 {
 	color: #00f7ff;
-	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ff77;
+	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ff3c;
 }
 
 .tech-list {
@@ -164,8 +164,10 @@
 		font-size: 1.3rem;
 		padding: 15px;
 	}
+
 	.project-content h1 {
 		font-size: 1.8rem;
+		text-shadow: 0 0 8px #00f7ff31, 0 0 20px #00f7ff00;
 	}
 	.project-buttons .btn {
 		font-size: 1.1rem;
@@ -180,7 +182,6 @@
 /* Responsive styles for smaller screens */
 @media (max-width: 800px) {
 	.project-wrapper {
-		text-shadow: 0 0 8px #00f7ff31, 0 0 20px #00f7ff00;
 		height: 300px;
 		width: 90%;
 		flex-direction: column;

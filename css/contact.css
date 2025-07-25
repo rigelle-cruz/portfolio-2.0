@@ -76,6 +76,7 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		text-shadow: 0 0 8px #00f7ff8a, 0 0 20px #00f7ff3d;
 	}
 	.contact-list li {
 		font-size: 2.1rem;
