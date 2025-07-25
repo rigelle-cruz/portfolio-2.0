@@ -1,26 +1,41 @@
 let slideIndex = 1;
 document.addEventListener('DOMContentLoaded', () => {
-	showSlideById(slideIndex);
+	showSlides(slideIndex);
 });
 
 function plusSlides(n) {
-	slideIndex += n;
-	if (slideIndex > 3) slideIndex = 1;
-	if (slideIndex < 1) slideIndex = 3;
-	showSlideById(slideIndex);
+	showSlides((slideIndex += n));
 }
 
 function currentSlide(n) {
 	slideIndex = n;
-	showSlideById(slideIndex);
+	showSlides(slideIndex);
 }
 
-function showSlideById(index) {
-	document.getElementById('slide1').style.display = 'none';
-	document.getElementById('slide2').style.display = 'none';
-	document.getElementById('slide3').style.display = 'none';
+function showSlides(n) {
+	const slides = document.getElementsByClassName('mySlides');
+	const browserImage = document.getElementById('browser-image');
 
-	document.getElementById(`slide${index}`).style.display = 'block';
+	if (n > slides.length) {
+		slideIndex = 1;
+	}
+	if (n < 1) {
+		slideIndex = slides.length;
+	}
+
+	// Hide all slides
+	for (let i = 0; i < slides.length; i++) {
+		slides[i].style.display = 'none';
+	}
+
+	// Show the current slide
+	slides[slideIndex - 1].style.display = 'block';
+
+	// Update the browser image based on the current slide
+	const imageSources = [
+		'assets/images/projects/cozy.jpg',
+		'path/to/slide2-image.jpg',
+		'path/to/slide3-image.jpg',
+	];
+	browserImage.src = imageSources[slideIndex - 1];
 }
-
-document.getElementById('slide1').style.display = 'block';

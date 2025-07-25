@@ -14,6 +14,7 @@
 	line-height: 1.2;
 }
 
+/* Project Content */
 .project-content {
 	height: 100%;
 	display: flex;
@@ -28,6 +29,11 @@
 	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ff77;
 }
 
+.tech-list {
+	color: #00f7ff;
+}
+
+/* Project Buttons */
 .project-buttons .btn {
 	margin: 10px 0;
 	padding: 6px 17px;
@@ -55,60 +61,60 @@
 	color: #0f0909;
 }
 
-.tech-list {
-	color: #00f7ff;
-}
-
-/* browser  */
-
+/* Browser */
 .browser {
-	width: 50%;
-	height: 80%;
-	border-style: solid;
-	border-width: 5px 5px 5px 5px;
-	border-color: #00f7ff;
-	border-radius: 10px;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	box-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ff3c;
-}
-
-.dot {
 	position: relative;
-	display: inline-block;
-	padding: 5px;
-	background: #00f7ff;
-	border-radius: 100%;
+	width: 70%;
+	height: 400px;
+	overflow: hidden;
 }
 
-.dot:nth-child(1) {
-	margin-left: 10px;
-}
-* {
-	box-sizing: border-box;
+#browser-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	animation: slideInFromLeft 1s ease-out;
 }
 
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slideshow Container */
 .slideshow-container {
 	margin: auto;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
 	height: 100%;
 	width: 100%;
 	padding: 20px;
 }
 
+/* Slides */
 .mySlides {
-	display: flex;
+	display: none;
 	flex-direction: row;
 }
 
-.mySlides {
+#slide1 {
+	display: block;
+}
+
+#slide2,
+#slide3 {
 	display: none;
 }
 
-/* Fading animation */
+/* Fading Animation */
 .fade {
 	animation-name: fade;
 	animation-duration: 1.5s;
@@ -123,30 +129,27 @@
 	}
 }
 
-#slide1 {
-	display: block;
-}
-
-#slide2,
-#slide3 {
-	display: none;
-}
-
+/* Navigation Buttons */
 .navigation-buttons {
+	color: #000000;
 	text-align: center;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding: 15px;
 }
 
 .navigation-buttons .prev,
 .navigation-buttons .next {
 	cursor: pointer;
-	padding: 10px 20px;
+	padding: 10px 10px;
 	font-size: 18px;
-	background-color: #f1f1f1;
-	border: none;
-	border-radius: 5px;
-	margin: 0 10px 0 0;
+	background-color: #00f7ff;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ff3c;
 }
 
 .navigation-buttons .prev:hover,
