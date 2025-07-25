@@ -34,8 +34,8 @@ function showSlides(n) {
 	// Update the browser image based on the current slide
 	const imageSources = [
 		'assets/images/projects/cozy.jpg',
-		'path/to/slide2-image.jpg',
-		'path/to/slide3-image.jpg',
+		'assets/images/projects/habit-tracker.GIF',
+		'assets/images/projects/boba-buddies-landing.svg',
 	];
 	browserImage.src = imageSources[slideIndex - 1];
 }
