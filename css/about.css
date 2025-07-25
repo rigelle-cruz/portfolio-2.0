@@ -116,6 +116,7 @@
 
 .about-text h1 {
 	text-align: left;
+	text-shadow: 0 0 8px #00f7ff79, 0 0 20px #00f7ff4f;
 }
 
 .about-text.slide {
