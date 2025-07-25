@@ -1,3 +1,21 @@
+// === LOADING SCREEN ===
+window.addEventListener('load', () => {
+	const loadingScreen = document.getElementById('loading-screen');
+
+	// Add a small delay to ensure smooth transition
+	setTimeout(() => {
+		loadingScreen.classList.add('fade-out');
+
+		// Remove the loading screen from DOM after transition
+		setTimeout(() => {
+			loadingScreen.style.display = 'none';
+			// Remove loading class and re-enable scrolling
+			document.body.classList.remove('loading');
+			document.body.style.overflow = 'auto';
+		}, 500);
+	}, 500);
+});
+
 document.addEventListener('includesLoaded', () => {
 	// === ZOOM EFFECT ON SCROLL ===
 	const zoomElements = document.querySelectorAll('.zoom-on-scroll');
