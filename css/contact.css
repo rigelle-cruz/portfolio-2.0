@@ -67,6 +67,10 @@
 
 /* Responsive styles */
 @media (max-width: 600px) {
+	.contact-container {
+		text-shadow: 0 0 8px #00f7ff0c, 0 0 20px #00f7ff00;
+	}
+
 	.contact-container h1 {
 		font-size: 7vh;
 		white-space: nowrap;
@@ -86,7 +90,7 @@
 		padding: 1rem;
 	}
 	.contact-container h1 {
-		font-size: 4vh;
+		font-size: 5vh;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
