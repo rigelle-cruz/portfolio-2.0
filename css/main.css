@@ -181,3 +181,9 @@ main > div[id] {
 .computer-overlay.computer-overlay-on {
 	opacity: 1;
 }
+
+@media (max-width: 520px) {
+	.computer-overlay {
+		opacity: 0 !important;
+	}
+}
