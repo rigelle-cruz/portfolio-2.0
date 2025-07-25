@@ -14,7 +14,7 @@
 	font-family: 'Noser', monospace;
 	font-size: 10vh;
 	color: #00f7ff;
-	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ff50;
+	text-shadow: 0 0 8px #00f7ffc8, 0 0 20px #00f7ff44;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -41,7 +41,7 @@
 
 .contact-list a {
 	color: #00f7ff;
-	text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ff50;
+	text-shadow: 0 0 8px #00f7ffc8, 0 0 20px #00f7ff44;
 	text-decoration: none;
 	word-break: break-all;
 }
@@ -76,7 +76,7 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		text-shadow: 0 0 8px #00f7ff8a, 0 0 20px #00f7ff3d;
+		text-shadow: 0 0 8px #00f7ff22, 0 0 20px #00f7ff25;
 	}
 	.contact-list li {
 		font-size: 2.1rem;
