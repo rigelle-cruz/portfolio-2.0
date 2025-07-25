@@ -15,7 +15,7 @@
 
 .about-skills-container {
 	position: absolute;
-	top: 32%;
+	top: 31%;
 	left: 51%;
 	transform: translate(-50%, -50%);
 	z-index: 2;
@@ -145,6 +145,7 @@
 @media (max-width: 1650px) {
 	.about-skills-container {
 		width: 30%;
+		top: 28%;
 	}
 }
 
