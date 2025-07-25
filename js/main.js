@@ -17,19 +17,6 @@ window.addEventListener('load', () => {
 });
 
 document.addEventListener('includesLoaded', () => {
-	// === ZOOM EFFECT ON SCROLL ===
-	const zoomElements = document.querySelectorAll('.zoom-on-scroll');
-	// Observer for zooming elements in/out on scroll
-	const zoomObserver = new IntersectionObserver(
-		(entries) => {
-			entries.forEach((entry) => {
-				entry.target.classList.toggle('zoomed-in', entry.isIntersecting);
-			});
-		},
-		{ threshold: 0.01 }
-	);
-	zoomElements.forEach((el) => zoomObserver.observe(el));
-
 	// === SECTION HASH UPDATE ON SCROLL ===
 	const sections = document.querySelectorAll('main > div[id]');
 	let lastHash = '';
@@ -130,15 +117,6 @@ document.addEventListener('includesLoaded', () => {
 					overlayImg.classList.add('computer-overlay-on');
 				} else {
 					overlayImg.classList.remove('computer-overlay-on');
-				}
-			}
-
-			const aboutContainer = document.querySelector('.about-container');
-			if (aboutContainer) {
-				if (sectionRatios.about === 1) {
-					aboutContainer.classList.add('zoomed-in');
-				} else {
-					aboutContainer.classList.remove('zoomed-in');
 				}
 			}
 		},
