@@ -165,7 +165,7 @@
 /* Responsive styles for Large Screens */
 @media (max-width: 855px) {
 	.project-wrapper {
-		width: 90%;
+		width: 95%;
 		font-size: 1.3rem;
 		padding: 15px;
 	}
@@ -178,53 +178,6 @@
 		font-size: 1.1rem;
 		padding: 8px 12px;
 	}
-	.browser {
-		width: 90%;
-		height: auto;
-	}
 }
 
-/* Responsive styles for smaller screens */
-@media (max-width: 800px) {
-	.project-wrapper {
-		height: 300px;
-		width: 90%;
-		flex-direction: column;
-		padding: 10px;
-		justify-content: center;
-	}
 
-	.browser {
-		width: 100%;
-		height: auto;
-		opacity: 0;
-	}
-}
-
-/* Responsive styles for very small screens */
-@media (max-width: 520px) {
-	.project-wrapper {
-		height: auto;
-		width: 100%;
-		padding: 10px;
-		font-size: 1rem;
-	}
-	.project-content h1 {
-		font-size: 1.4rem;
-	}
-	.project-buttons .btn {
-		font-size: 0.9rem;
-		padding: 10px 10px;
-	}
-	.browser {
-		width: 80%;
-		margin: 10px;
-		height: auto;
-		opacity: 1;
-	}
-	.navigation-buttons .prev,
-	.navigation-buttons .next {
-		font-size: 14px;
-		padding: 6px 8px;
-	}
-}
