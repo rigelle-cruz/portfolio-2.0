@@ -14,7 +14,6 @@ function currentSlide(n) {
 
 function showSlides(n) {
 	const slides = document.getElementsByClassName('mySlides');
-	const browserImage = document.getElementById('browser-image');
 
 	if (n > slides.length) {
 		slideIndex = 1;
@@ -30,12 +29,4 @@ function showSlides(n) {
 
 	// Show the current slide
 	slides[slideIndex - 1].style.display = 'block';
-
-	// Update the browser image based on the current slide
-	const imageSources = [
-		'assets/images/projects/cozy.jpg',
-		'assets/images/projects/habit-tracker.GIF',
-		'assets/images/projects/boba-buddies-landing.svg',
-	];
-	browserImage.src = imageSources[slideIndex - 1];
 }
