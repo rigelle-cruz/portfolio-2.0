@@ -180,4 +180,26 @@
 	}
 }
 
+@media (max-width: 750px) {
+	.project-wrapper {
+		width: 98%;
+		font-size: 1.3rem;
+		padding: 15px;
+	}
 
+	.project-content {
+		flex-direction: column;
+	}
+	.project-text {
+		width: 100%;
+	}
+
+	.project-content h1 {
+		font-size: 1.8rem;
+		text-shadow: 0 0 8px #00f7ff21, 0 0 20px #00f7ff00;
+	}
+	.project-buttons .btn {
+		font-size: 1.1rem;
+		padding: 8px 12px;
+	}
+}
