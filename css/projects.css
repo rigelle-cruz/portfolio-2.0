@@ -166,7 +166,7 @@
 @media (max-width: 855px) {
 	.project-wrapper {
 		width: 95%;
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		padding: 15px;
 	}
 
@@ -175,7 +175,7 @@
 		text-shadow: 0 0 8px #00f7ff21, 0 0 20px #00f7ff00;
 	}
 	.project-buttons .btn {
-		font-size: 1.1rem;
+		font-size: 1.2rem;
 		padding: 8px 12px;
 	}
 }
@@ -194,8 +194,48 @@
 		width: 100%;
 	}
 
+	.project-image {
+		width: 95%;
+		height: auto;
+		overflow: visible;
+	}
+
+	.project-image img {
+		height: 200px;
+	}
+
 	.project-content h1 {
 		font-size: 1.8rem;
+		text-shadow: 0 0 8px #00f7ff21, 0 0 20px #00f7ff00;
+	}
+	.project-buttons .btn {
+		font-size: 1.1rem;
+		padding: 8px 12px;
+	}
+}
+
+@media (max-width: 600px) {
+	.project-wrapper {
+		width: 100%;
+		height: auto;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.1rem;
+		padding: 15px;
+	}
+
+	.project-text {
+		gap: 15px;
+	}
+
+	.project-image {
+		width: 100%;
+		height: 100%;
+		overflow: visible;
+	}
+
+	.project-content h1 {
+		font-size: 1.5rem;
 		text-shadow: 0 0 8px #00f7ff21, 0 0 20px #00f7ff00;
 	}
 	.project-buttons .btn {
