@@ -219,11 +219,8 @@ main > div[id] {
 	width: 1650px;
 	height: auto;
 	pointer-events: none;
-	opacity: 0;
-}
-
-.computer-overlay.computer-overlay-on {
 	opacity: 1;
+	transition: opacity 0.5s;
 }
 
 @media (max-width: 520px) {

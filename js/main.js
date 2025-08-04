@@ -1,19 +1,28 @@
-// === LOADING SCREEN ===
-window.addEventListener('load', () => {
+// === LOADING SCREEN & COMPUTER OVERLAY PRELOAD ===
+document.addEventListener('includesLoaded', () => {
+	const overlayImg = document.getElementById('computerOverlayImg');
+	const main = document.querySelector('main');
 	const loadingScreen = document.getElementById('loading-screen');
 
-	// Add a small delay to ensure smooth transition
-	setTimeout(() => {
-		loadingScreen.classList.add('fade-out');
-
-		// Remove the loading screen from DOM after transition
+	function showContent() {
+		if (loadingScreen) loadingScreen.classList.add('fade-out');
 		setTimeout(() => {
-			loadingScreen.style.display = 'none';
-			// Remove loading class and re-enable scrolling
+			if (loadingScreen) loadingScreen.style.display = 'none';
+			if (main) main.style.display = '';
+			if (overlayImg) overlayImg.style.display = '';
 			document.body.classList.remove('loading');
 			document.body.style.overflow = 'auto';
 		}, 500);
-	}, 500);
+	}
+
+	if (overlayImg && overlayImg.complete) {
+		showContent();
+	} else if (overlayImg) {
+		overlayImg.addEventListener('load', showContent);
+	} else {
+		// fallback: if overlayImg not found, just show content after window load
+		window.addEventListener('load', showContent);
+	}
 });
 
 document.addEventListener('includesLoaded', () => {
@@ -84,48 +93,5 @@ document.addEventListener('includesLoaded', () => {
 	showSlide(0);
 	startAutoSlide();
 
-	// === COMPUTER OVERLAY LOGIC ===
-	const overlayImg = document.querySelector('.computer-overlay');
-	const aboutSection = document.getElementById('about');
-	const projectsSection = document.getElementById('projects');
-	const contactSection = document.getElementById('contact');
-
-	// Track intersection ratios for all sections
-	const sectionRatios = {
-		about: 0,
-		projects: 0,
-		contact: 0,
-	};
-
-	let overlayHasBeenShown = false;
-
-	const overlaySectionObserver = new IntersectionObserver(
-		(entries) => {
-			entries.forEach((entry) => {
-				if (sectionRatios.hasOwnProperty(entry.target.id)) {
-					sectionRatios[entry.target.id] = entry.intersectionRatio;
-				}
-			});
-
-			const showOverlay =
-				sectionRatios.about > 0 ||
-				sectionRatios.projects > 0 ||
-				sectionRatios.contact > 0;
-
-			if (overlayImg) {
-				if (showOverlay) {
-					overlayImg.classList.add('computer-overlay-on');
-				} else {
-					overlayImg.classList.remove('computer-overlay-on');
-				}
-			}
-		},
-		{
-			threshold: [0, 1.0],
-		}
-	);
-
-	if (aboutSection) overlaySectionObserver.observe(aboutSection);
-	if (projectsSection) overlaySectionObserver.observe(projectsSection);
-	if (contactSection) overlaySectionObserver.observe(contactSection);
+	// === COMPUTER OVERLAY LOGIC REMOVED: Overlay is always visible after load ===
 });

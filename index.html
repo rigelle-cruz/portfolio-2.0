@@ -72,7 +72,7 @@
 			<a href="#contact">Contact</a>
 		</nav>
 
-		<main>
+		<main style="display: none">
 			<!-- Hero Section -->
 			<div id="hero" data-nav-dark data-include="components/hero.html"></div>
 			<!-- Hero Section Ends Here -->
@@ -102,7 +102,29 @@
 			<img
 				src="assets/images/computer-no-screen.png"
 				alt="computer"
-				class="computer-overlay" />
+				class="computer-overlay"
+				id="computerOverlayImg"
+				style="display: none" />
 		</main>
+		<script>
+			// Wait for DOM
+			document.addEventListener('DOMContentLoaded', function () {
+				var overlayImg = document.getElementById('computerOverlayImg');
+				var main = document.querySelector('main');
+				var loadingScreen = document.getElementById('loading-screen');
+				// If already cached, load event may not fire
+				if (overlayImg.complete) {
+					showContent();
+				} else {
+					overlayImg.addEventListener('load', showContent);
+				}
+				function showContent() {
+					if (loadingScreen) loadingScreen.style.display = 'none';
+					if (main) main.style.display = '';
+					overlayImg.style.display = '';
+					document.body.classList.remove('loading');
+				}
+			});
+		</script>
 	</body>
 </html>
