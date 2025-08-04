@@ -1,27 +1,18 @@
 // === LOADING SCREEN & COMPUTER OVERLAY PRELOAD ===
-document.addEventListener('includesLoaded', () => {
-	const overlayImg = document.getElementById('computerOverlayImg');
-	const main = document.querySelector('main');
-	const loadingScreen = document.getElementById('loading-screen');
-
+document.addEventListener('includesLoaded', function () {
+	var overlayImg = document.getElementById('computerOverlayImg');
+	var main = document.querySelector('main');
+	var loadingScreen = document.getElementById('loading-screen');
 	function showContent() {
-		if (loadingScreen) loadingScreen.classList.add('fade-out');
-		setTimeout(() => {
-			if (loadingScreen) loadingScreen.style.display = 'none';
-			if (main) main.style.display = '';
-			if (overlayImg) overlayImg.style.display = '';
-			document.body.classList.remove('loading');
-			document.body.style.overflow = 'auto';
-		}, 500);
+		if (loadingScreen) loadingScreen.style.display = 'none';
+		if (main) main.style.display = '';
+		if (overlayImg) overlayImg.style.display = '';
+		document.body.classList.remove('loading');
 	}
-
 	if (overlayImg && overlayImg.complete) {
 		showContent();
 	} else if (overlayImg) {
 		overlayImg.addEventListener('load', showContent);
-	} else {
-		// fallback: if overlayImg not found, just show content after window load
-		window.addEventListener('load', showContent);
 	}
 });
 
@@ -93,5 +84,4 @@ document.addEventListener('includesLoaded', () => {
 	showSlide(0);
 	startAutoSlide();
 
-	// === COMPUTER OVERLAY LOGIC REMOVED: Overlay is always visible after load ===
 });
